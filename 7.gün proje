@@ -1,0 +1,26 @@
+import random
+
+# Bilgisayarın seçtiği rastgele sayı
+sayi = random.randint(1, 100)
+
+# Tahmin hakkı
+tahmin_hakki = 5
+
+print("1 ile 100 arasında bir sayı tuttum. Bunu tahmin etmeye çalış!")
+
+# Kullanıcının tahmin etmeye başlaması
+for tahmin_sayisi in range(tahmin_hakki):
+    tahmin = int(input(f"{tahmin_sayisi + 1}. tahmininizi yapın: "))
+    
+    # Kullanıcı doğru tahmin yaparsa
+    if tahmin == sayi:
+        print("Tebrikler! Sayıyı doğru tahmin ettiniz.")
+        break
+    elif tahmin < sayi:
+        print("Daha büyük bir sayı deneyin.")
+    else:
+        print("Daha küçük bir sayı deneyin.")
+    
+    # Eğer tüm tahmin hakları biterse
+    if tahmin_sayisi == tahmin_hakki - 1:
+        print(f"Üzgünüm! Sayıyı bilemediniz. Doğru sayı: {sayi}")
